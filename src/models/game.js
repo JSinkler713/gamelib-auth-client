@@ -2,7 +2,9 @@ const url = `http://localhost:4000/api/v1`
 
 class GameModel {
   static all = () => {
-    return fetch(`${url}/games`).then(res => res.json())
+    //if you want access to req.user from sessions, need todo a credentials: 'include', else req.user is empty...
+    //thank stackOverflow
+    return fetch(`${url}/games`, {credentials: 'include'}).then(res => res.json())
   }
 
   static show = (gameId) => {
