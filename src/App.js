@@ -7,6 +7,7 @@ import UserModel from './models/user'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem('id'))
+  console.log(process.env.REACT_APP_API_URL)
 
   const storeUser = (userId)=> {
     setCurrentUser( userId )
